@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Husync — Download</title>
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -119,7 +119,7 @@
 <body>
 
   <section class="hero">
-    <img src="/logo-alpha.png" alt="Husync" />
+    <img src="logo-alpha.png" alt="Husync" />
     <h1>Husync</h1>
     <p>Organizational Transformation Platform — structure, execute, and track change management methods.</p>
 
@@ -168,7 +168,7 @@
   <footer>&copy; 2026 Husync. All rights reserved.</footer>
 
   <script>
-    const RELEASE_BASE = "/releases";
+    const RELEASE_BASE = "releases";
 
     function detectOS() {
       const ua = navigator.userAgent.toLowerCase();
@@ -180,7 +180,7 @@
     async function init() {
       let data;
       try {
-        const res = await fetch("/latest.json");
+        const res = await fetch("latest.json");
         if (!res.ok) throw new Error(res.status);
         data = await res.json();
       } catch {
