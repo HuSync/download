@@ -11,146 +11,180 @@
 
     :root {
       --navy: #0f2b3c;
-      --navy-light: #1b4f72;
+      --navy-mid: #163448;
       --teal: #17a2b8;
-      --teal-light: #e0f7fa;
+      --teal-hover: #1abdd6;
       --bg: #f4f6f9;
       --text: #1a202c;
       --muted: #718096;
       --border: #e2e8f0;
+      --white: #ffffff;
     }
 
     body {
       font-family: "DM Sans", system-ui, sans-serif;
-      background: var(--bg);
+      background: var(--navy);
       color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* Hero */
-    .hero {
-      background: var(--navy);
-      color: white;
-      text-align: center;
-      padding: 5rem 1.5rem 4rem;
+    .container {
+      width: 100%;
+      max-width: 480px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
     }
-    .hero img { height: 64px; margin-bottom: 1.5rem; }
-    .hero h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .hero p { font-size: 0.875rem; color: rgba(255,255,255,0.6); max-width: 28rem; margin: 0 auto 2rem; }
+
+    /* Logo + title */
+    .brand {
+      text-align: center;
+    }
+    .brand img { height: 56px; margin-bottom: 1.25rem; }
+    .brand p {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+      max-width: 22rem;
+      margin: 0 auto;
+    }
+
+    /* Download card */
+    .download-card {
+      width: 100%;
+      background: var(--navy-mid);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1rem;
+      padding: 2rem 1.75rem;
+      text-align: center;
+    }
 
     .download-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--teal); color: white;
-      padding: 0.75rem 2rem; border-radius: 0.5rem;
-      font-size: 0.9375rem; font-weight: 600;
-      text-decoration: none; border: none; cursor: pointer;
-      transition: opacity 0.15s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      width: 100%;
+      background: var(--teal);
+      color: var(--white);
+      padding: 0.875rem 1.5rem;
+      border-radius: 0.625rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
     }
-    .download-primary:hover { opacity: 0.9; }
-    .download-primary svg { width: 18px; height: 18px; }
+    .download-primary:hover { background: var(--teal-hover); }
+    .download-primary:active { transform: scale(0.985); }
+    .download-primary svg { width: 18px; height: 18px; flex-shrink: 0; }
 
-    .version-badge {
-      display: inline-block; margin-top: 1rem;
-      font-size: 0.6875rem; color: rgba(255,255,255,0.4);
+    .download-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
     }
+    .download-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.2); }
 
-    .alt-link {
-      display: block; margin-top: 0.75rem;
-      font-size: 0.75rem; color: rgba(255,255,255,0.5);
-    }
-    .alt-link a { color: var(--teal); text-decoration: underline; }
+    .alt-link { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 1rem; }
+    .alt-link a { color: var(--teal); text-decoration: none; font-weight: 500; }
+    .alt-link a:hover { text-decoration: underline; }
 
-    /* Features */
-    .features {
-      max-width: 48rem; margin: 0 auto;
-      padding: 3rem 1.5rem;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-      gap: 1.5rem;
+    /* Platform cards */
+    .platforms {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
     }
-    .feature-card {
-      background: white; border-radius: 0.625rem;
-      padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.07);
-    }
-    .feature-card h3 {
-      font-size: 0.8125rem; font-weight: 700; color: var(--navy);
-      margin-bottom: 0.375rem;
-    }
-    .feature-card p { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+    @media (max-width: 480px) { .platforms { grid-template-columns: 1fr; } }
 
-    /* All downloads */
-    .downloads {
-      max-width: 48rem; margin: 0 auto;
-      padding: 0 1.5rem 3rem;
+    .platform-card {
+      background: var(--navy-mid);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
     }
-    .downloads h2 {
-      font-size: 1rem; font-weight: 700; color: var(--navy);
-      margin-bottom: 1rem;
+    .platform-card .os-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.875rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
     }
-    .downloads-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-    }
-    @media (max-width: 480px) { .downloads-grid { grid-template-columns: 1fr; } }
+    .platform-card .os-header svg { width: 16px; height: 16px; opacity: 0.6; }
 
-    .dl-card {
-      background: white; border-radius: 0.625rem;
-      padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.07);
-      display: flex; flex-direction: column; gap: 0.75rem;
+    .platform-card .files { display: flex; flex-direction: column; gap: 0.375rem; }
+    .platform-card a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.6875rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      padding: 0.5rem 0.625rem;
+      border-radius: 0.375rem;
+      background: rgba(255,255,255,0.04);
+      transition: background 0.15s, color 0.15s;
+      font-family: "DM Sans", monospace;
     }
-    .dl-card .os { font-size: 0.8125rem; font-weight: 700; color: var(--navy); }
-    .dl-card .files { display: flex; flex-direction: column; gap: 0.375rem; }
-    .dl-card a {
-      font-size: 0.75rem; color: var(--teal); text-decoration: none;
-      padding: 0.375rem 0.75rem; border: 1px solid var(--border);
-      border-radius: 0.375rem; transition: background 0.15s;
+    .platform-card a:hover {
+      background: rgba(255,255,255,0.08);
+      color: var(--teal);
     }
-    .dl-card a:hover { background: var(--teal-light); }
+    .platform-card a svg { width: 13px; height: 13px; flex-shrink: 0; opacity: 0.5; }
 
     /* Footer */
     footer {
-      margin-top: auto; text-align: center;
-      padding: 2rem 1.5rem; font-size: 0.6875rem; color: var(--muted);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.6875rem;
+      color: rgba(255,255,255,0.2);
     }
 
-    .hidden { display: none; }
+    .hidden { display: none !important; }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <img src="logo-alpha.png" alt="Husync" />
-    <h1>Husync</h1>
-    <p>Organizational Transformation Platform — structure, execute, and track change management methods.</p>
+  <div class="container">
+    <div class="brand">
+      <img src="logo-alpha.png" alt="Husync" />
+      <p>Organizational Transformation Platform — structure, execute, and track change management methods.</p>
+    </div>
 
-    <div id="hero-download">
-      <a id="primary-btn" class="download-primary hidden" href="#">
+    <div id="download-card" class="download-card hidden">
+      <a id="primary-btn" class="download-primary" href="#">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         <span id="primary-label">Download</span>
       </a>
-      <div id="version-info" class="version-badge hidden"></div>
+      <div id="download-meta" class="download-meta hidden"></div>
       <div id="alt-download" class="alt-link hidden"></div>
     </div>
-    <noscript>
-      <p style="margin-top:1rem;font-size:0.8125rem;color:rgba(255,255,255,0.6);">
-        Enable JavaScript to see download links, or check the
-        <a href="https://github.com/HuSync/husync/releases/latest" style="color:#17a2b8;">GitHub Releases</a> page.
-      </p>
-    </noscript>
-  </section>
 
+    <div id="platforms" class="platforms hidden"></div>
+  </div>
 
-  <section class="downloads" id="downloads-section">
-    <h2>All Downloads</h2>
-    <div id="downloads-grid" class="downloads-grid">
-      <p style="font-size:0.8125rem;color:#718096;">Loading releases...</p>
-    </div>
-  </section>
-
-  <footer>&copy; 2026 Husync. All rights reserved.</footer>
+  <footer>&copy; 2026 Husync</footer>
 
   <script>
     const RELEASE_BASE = "releases";
+    const DL_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+    const APPLE_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>';
+    const WIN_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 12V6.75l8-1.25V12H3zm0 .5h8v6.5l-8-1.25V12.5zM11.5 5.35l9.5-1.6V12H11.5V5.35zM11.5 12.5H21v7.75l-9.5-1.6V12.5z"/></svg>';
 
     function detectOS() {
       const ua = navigator.userAgent.toLowerCase();
@@ -159,89 +193,91 @@
       return "unknown";
     }
 
+    function formatSize(name) {
+      if (name.endsWith(".dmg")) return "DMG — Universal";
+      if (name.endsWith(".exe")) return "EXE Installer";
+      if (name.endsWith(".msi")) return "MSI Installer";
+      return "";
+    }
+
     async function init() {
       let data;
       try {
         const res = await fetch("latest.json");
         if (!res.ok) throw new Error(res.status);
         data = await res.json();
-      } catch {
-        document.getElementById("downloads-section").classList.add("hidden");
-        return;
-      }
+      } catch { return; }
 
       const v = data.version;
-      if (!v) {
-        document.getElementById("downloads-section").classList.add("hidden");
-        return;
-      }
-      const os = detectOS();
+      if (!v) return;
 
-      // Build download URLs from latest.json platforms
+      const os = detectOS();
       const platforms = data.platforms || {};
       const mac = platforms["darwin-universal"] || platforms["darwin-aarch64"] || platforms["darwin-x86_64"];
       const win = platforms["windows-x86_64"];
 
-      // Derive user-facing installer names from version
       const macDmg = `${RELEASE_BASE}/Husync_${v}_universal.dmg`;
       const winExe = `${RELEASE_BASE}/Husync_${v}_x64-setup.exe`;
       const winMsi = `${RELEASE_BASE}/Husync_${v}_x64_en-US.msi`;
 
-      // Primary download button
+      // Show download card
+      const card = document.getElementById("download-card");
       const btn = document.getElementById("primary-btn");
       const label = document.getElementById("primary-label");
       const altDiv = document.getElementById("alt-download");
-      const vInfo = document.getElementById("version-info");
+      const meta = document.getElementById("download-meta");
 
-      btn.classList.remove("hidden");
-      vInfo.classList.remove("hidden");
-      vInfo.textContent = `v${v}`;
+      card.classList.remove("hidden");
+      meta.classList.remove("hidden");
+
+      const osLabel = os === "macos" ? "macOS" : os === "windows" ? "Windows" : null;
+      const altOs = os === "macos" ? "Windows" : os === "windows" ? "macOS" : null;
+      const altHref = os === "macos" ? winExe : macDmg;
 
       if (os === "macos" && mac) {
         btn.href = macDmg;
         label.textContent = "Download for macOS";
-        if (win) {
-          altDiv.classList.remove("hidden");
-          altDiv.innerHTML = `Also available for <a href="${winExe}">Windows</a>`;
-        }
       } else if (os === "windows" && win) {
         btn.href = winExe;
         label.textContent = "Download for Windows";
-        if (mac) {
-          altDiv.classList.remove("hidden");
-          altDiv.innerHTML = `Also available for <a href="${macDmg}">macOS</a>`;
-        }
       } else {
-        // Unknown OS — show generic
         btn.href = mac ? macDmg : winExe;
         label.textContent = "Download";
-        altDiv.classList.remove("hidden");
-        const links = [];
-        if (mac) links.push(`<a href="${macDmg}">macOS</a>`);
-        if (win) links.push(`<a href="${winExe}">Windows</a>`);
-        altDiv.innerHTML = `Available for ${links.join(" and ")}`;
       }
 
-      // All downloads grid
-      let gridHTML = "";
+      meta.innerHTML = `<span>v${v}</span><span class="dot"></span><span>${osLabel || "macOS & Windows"}</span>`;
+
+      if (altOs) {
+        altDiv.classList.remove("hidden");
+        altDiv.innerHTML = `Also available for <a href="${altHref}">${altOs}</a>`;
+      }
+
+      // Platform cards
+      const platformsEl = document.getElementById("platforms");
+      let html = "";
+
       if (mac) {
-        gridHTML += `<div class="dl-card">
-          <span class="os">macOS</span>
+        html += `<div class="platform-card">
+          <div class="os-header">${APPLE_ICON} macOS</div>
           <div class="files">
-            <a href="${macDmg}">Husync_${v}_universal.dmg</a>
+            <a href="${macDmg}">${DL_ICON} Husync_${v}_universal.dmg</a>
           </div>
         </div>`;
       }
       if (win) {
-        gridHTML += `<div class="dl-card">
-          <span class="os">Windows</span>
+        html += `<div class="platform-card">
+          <div class="os-header">${WIN_ICON} Windows</div>
           <div class="files">
-            <a href="${winExe}">Husync_${v}_x64-setup.exe</a>
-            <a href="${winMsi}">Husync_${v}_x64_en-US.msi</a>
+            <a href="${winExe}">${DL_ICON} Husync_${v}_x64-setup.exe</a>
+            <a href="${winMsi}">${DL_ICON} Husync_${v}_x64_en-US.msi</a>
           </div>
         </div>`;
       }
-      document.getElementById("downloads-grid").innerHTML = gridHTML || '<p style="font-size:0.8125rem;color:#718096;">No releases available yet.</p>';
+
+      if (html) {
+        platformsEl.innerHTML = html;
+        platformsEl.classList.remove("hidden");
+      }
     }
 
     init();
