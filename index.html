@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Husync — Download</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f2b3c;
+      --navy-light: #1b4f72;
+      --teal: #17a2b8;
+      --teal-light: #e0f7fa;
+      --bg: #f4f6f9;
+      --text: #1a202c;
+      --muted: #718096;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+    }
+    .hero img { height: 64px; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .hero p { font-size: 0.875rem; color: rgba(255,255,255,0.6); max-width: 28rem; margin: 0 auto 2rem; }
+
+    .download-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--teal); color: white;
+      padding: 0.75rem 2rem; border-radius: 0.5rem;
+      font-size: 0.9375rem; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .download-primary:hover { opacity: 0.9; }
+    .download-primary svg { width: 18px; height: 18px; }
+
+    .version-badge {
+      display: inline-block; margin-top: 1rem;
+      font-size: 0.6875rem; color: rgba(255,255,255,0.4);
+    }
+
+    .alt-link {
+      display: block; margin-top: 0.75rem;
+      font-size: 0.75rem; color: rgba(255,255,255,0.5);
+    }
+    .alt-link a { color: var(--teal); text-decoration: underline; }
+
+    /* Features */
+    .features {
+      max-width: 48rem; margin: 0 auto;
+      padding: 3rem 1.5rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: white; border-radius: 0.625rem;
+      padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    }
+    .feature-card h3 {
+      font-size: 0.8125rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.375rem;
+    }
+    .feature-card p { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+
+    /* All downloads */
+    .downloads {
+      max-width: 48rem; margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+    .downloads h2 {
+      font-size: 1rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .downloads-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    @media (max-width: 480px) { .downloads-grid { grid-template-columns: 1fr; } }
+
+    .dl-card {
+      background: white; border-radius: 0.625rem;
+      padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .dl-card .os { font-size: 0.8125rem; font-weight: 700; color: var(--navy); }
+    .dl-card .files { display: flex; flex-direction: column; gap: 0.375rem; }
+    .dl-card a {
+      font-size: 0.75rem; color: var(--teal); text-decoration: none;
+      padding: 0.375rem 0.75rem; border: 1px solid var(--border);
+      border-radius: 0.375rem; transition: background 0.15s;
+    }
+    .dl-card a:hover { background: var(--teal-light); }
+
+    /* Footer */
+    footer {
+      margin-top: auto; text-align: center;
+      padding: 2rem 1.5rem; font-size: 0.6875rem; color: var(--muted);
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <img src="/logo-alpha.png" alt="Husync" />
+    <h1>Husync</h1>
+    <p>Organizational Transformation Platform — structure, execute, and track change management methods.</p>
+
+    <div id="hero-download">
+      <a id="primary-btn" class="download-primary hidden" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span id="primary-label">Download</span>
+      </a>
+      <div id="version-info" class="version-badge hidden"></div>
+      <div id="alt-download" class="alt-link hidden"></div>
+    </div>
+    <noscript>
+      <p style="margin-top:1rem;font-size:0.8125rem;color:rgba(255,255,255,0.6);">
+        Enable JavaScript to see download links, or check the
+        <a href="https://github.com/HuSync/husync/releases/latest" style="color:#17a2b8;">GitHub Releases</a> page.
+      </p>
+    </noscript>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>Method Library</h3>
+      <p>Create, import, and customize transformation frameworks organized as phases and steps.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Project Execution</h3>
+      <p>Instantiate methods as projects and track step-by-step progress with fillable forms and checklists.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Voice Assistant</h3>
+      <p>Talk to Gemini AI to manage methods, create projects, and navigate the app hands-free.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Team Management</h3>
+      <p>Multi-tenant organizations with invite codes and role-based access control.</p>
+    </div>
+  </section>
+
+  <section class="downloads" id="downloads-section">
+    <h2>All Downloads</h2>
+    <div id="downloads-grid" class="downloads-grid">
+      <p style="font-size:0.8125rem;color:#718096;">Loading releases...</p>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Husync. All rights reserved.</footer>
+
+  <script>
+    const RELEASE_BASE = "/releases";
+
+    function detectOS() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.includes("mac")) return "macos";
+      if (ua.includes("win")) return "windows";
+      return "unknown";
+    }
+
+    async function init() {
+      let data;
+      try {
+        const res = await fetch("/latest.json");
+        if (!res.ok) throw new Error(res.status);
+        data = await res.json();
+      } catch {
+        document.getElementById("downloads-grid").innerHTML =
+          '<p style="font-size:0.8125rem;color:#718096;">No releases available yet.</p>';
+        return;
+      }
+
+      const v = data.version;
+      const os = detectOS();
+
+      // Build download URLs from latest.json platforms
+      const platforms = data.platforms || {};
+      const mac = platforms["darwin-universal"] || platforms["darwin-aarch64"] || platforms["darwin-x86_64"];
+      const win = platforms["windows-x86_64"];
+
+      // Derive user-facing installer names from version
+      const macDmg = `${RELEASE_BASE}/Husync_${v}_universal.dmg`;
+      const winExe = `${RELEASE_BASE}/Husync_${v}_x64-setup.exe`;
+      const winMsi = `${RELEASE_BASE}/Husync_${v}_x64_en-US.msi`;
+
+      // Primary download button
+      const btn = document.getElementById("primary-btn");
+      const label = document.getElementById("primary-label");
+      const altDiv = document.getElementById("alt-download");
+      const vInfo = document.getElementById("version-info");
+
+      btn.classList.remove("hidden");
+      vInfo.classList.remove("hidden");
+      vInfo.textContent = `v${v}`;
+
+      if (os === "macos" && mac) {
+        btn.href = macDmg;
+        label.textContent = "Download for macOS";
+        if (win) {
+          altDiv.classList.remove("hidden");
+          altDiv.innerHTML = `Also available for <a href="${winExe}">Windows</a>`;
+        }
+      } else if (os === "windows" && win) {
+        btn.href = winExe;
+        label.textContent = "Download for Windows";
+        if (mac) {
+          altDiv.classList.remove("hidden");
+          altDiv.innerHTML = `Also available for <a href="${macDmg}">macOS</a>`;
+        }
+      } else {
+        // Unknown OS — show generic
+        btn.href = mac ? macDmg : winExe;
+        label.textContent = "Download";
+        altDiv.classList.remove("hidden");
+        const links = [];
+        if (mac) links.push(`<a href="${macDmg}">macOS</a>`);
+        if (win) links.push(`<a href="${winExe}">Windows</a>`);
+        altDiv.innerHTML = `Available for ${links.join(" and ")}`;
+      }
+
+      // All downloads grid
+      let gridHTML = "";
+      if (mac) {
+        gridHTML += `<div class="dl-card">
+          <span class="os">macOS</span>
+          <div class="files">
+            <a href="${macDmg}">Husync_${v}_universal.dmg</a>
+          </div>
+        </div>`;
+      }
+      if (win) {
+        gridHTML += `<div class="dl-card">
+          <span class="os">Windows</span>
+          <div class="files">
+            <a href="${winExe}">Husync_${v}_x64-setup.exe</a>
+            <a href="${winMsi}">Husync_${v}_x64_en-US.msi</a>
+          </div>
+        </div>`;
+      }
+      document.getElementById("downloads-grid").innerHTML = gridHTML || '<p style="font-size:0.8125rem;color:#718096;">No releases available yet.</p>';
+    }
+
+    init();
+  </script>
+</body>
+</html>
