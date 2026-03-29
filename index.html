@@ -190,6 +190,11 @@
       }
 
       const v = data.version;
+      if (!v) {
+        document.getElementById("downloads-grid").innerHTML =
+          '<p style="font-size:0.8125rem;color:#718096;">No releases available yet.</p>';
+        return;
+      }
       const os = detectOS();
 
       // Build download URLs from latest.json platforms
