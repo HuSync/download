@@ -1,0 +1,31 @@
+{
+  "version": "0.142.0",
+  "notes": "",
+  "pub_date": "2026-07-25T08:57:05.926Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MGxSYkhCaWtSWGZYZzM0WEMxcEtYUXhNVHNsbzJUWlhza2ttdWFRdzB0MUhuQUgrdjhUT25MVStjLzRBbFh6dmdtVXdoa0VweENHQlllNmFUb3J2dkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTY5MTA1CWZpbGU6SHVzeW5jLmFwcC50YXIuZ3oKaWZ1L09IWmlmYmlTaUcyVWNlektCQXkra0dOYWhmYU5iTDZRd3dHL3RMVEN0WUpnOC9iT3R6SEZsUUx5T2pOUEE0V3BBMEh0dEp3d0M4S0NDUE1tQ2c9PQo=",
+      "url": "https://husync.github.io/download/releases/Husync_universal.app.tar.gz"
+    },
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MGxSYkhCaWtSWGZYZzM0WEMxcEtYUXhNVHNsbzJUWlhza2ttdWFRdzB0MUhuQUgrdjhUT25MVStjLzRBbFh6dmdtVXdoa0VweENHQlllNmFUb3J2dkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTY5MTA1CWZpbGU6SHVzeW5jLmFwcC50YXIuZ3oKaWZ1L09IWmlmYmlTaUcyVWNlektCQXkra0dOYWhmYU5iTDZRd3dHL3RMVEN0WUpnOC9iT3R6SEZsUUx5T2pOUEE0V3BBMEh0dEp3d0M4S0NDUE1tQ2c9PQo=",
+      "url": "https://husync.github.io/download/releases/Husync_universal.app.tar.gz"
+    },
+    "darwin-aarch64-app": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MGxSYkhCaWtSWGZYZzM0WEMxcEtYUXhNVHNsbzJUWlhza2ttdWFRdzB0MUhuQUgrdjhUT25MVStjLzRBbFh6dmdtVXdoa0VweENHQlllNmFUb3J2dkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTY5MTA1CWZpbGU6SHVzeW5jLmFwcC50YXIuZ3oKaWZ1L09IWmlmYmlTaUcyVWNlektCQXkra0dOYWhmYU5iTDZRd3dHL3RMVEN0WUpnOC9iT3R6SEZsUUx5T2pOUEE0V3BBMEh0dEp3d0M4S0NDUE1tQ2c9PQo=",
+      "url": "https://husync.github.io/download/releases/Husync_universal.app.tar.gz"
+    },
+    "darwin-x86_64-app": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MGxSYkhCaWtSWGZYZzM0WEMxcEtYUXhNVHNsbzJUWlhza2ttdWFRdzB0MUhuQUgrdjhUT25MVStjLzRBbFh6dmdtVXdoa0VweENHQlllNmFUb3J2dkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTY5MTA1CWZpbGU6SHVzeW5jLmFwcC50YXIuZ3oKaWZ1L09IWmlmYmlTaUcyVWNlektCQXkra0dOYWhmYU5iTDZRd3dHL3RMVEN0WUpnOC9iT3R6SEZsUUx5T2pOUEE0V3BBMEh0dEp3d0M4S0NDUE1tQ2c9PQo=",
+      "url": "https://husync.github.io/download/releases/Husync_universal.app.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MG45dlkyNFJLcGJ1aytudkxEVzdaVnNiYU5XOWg4U2NZNTJ3N1ZkcEN1M1FZKzJERGxZTmlKWmQxMXNOZDR4RjBFeXE3ZThlTGpiR2IwaDVRVHN4YUF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTY5ODIzCWZpbGU6SHVzeW5jXzAuMTQyLjBfeDY0LXNldHVwLmV4ZQpsc1FmLytPcW1MUWtqK1VLTUNYL3FwOEU0S3FpUVB5bGhRZDlraVFmVENQT2lxT2hxYnBsVEpzSk9FcmxMOWh6NDNBZ2g2RnA3RzNKUjZjSGxGeW9DZz09Cg==",
+      "url": "https://husync.github.io/download/releases/Husync_0.142.0_x64-setup.exe"
+    },
+    "windows-x86_64-nsis": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MG45dlkyNFJLcGJ1aytudkxEVzdaVnNiYU5XOWg4U2NZNTJ3N1ZkcEN1M1FZKzJERGxZTmlKWmQxMXNOZDR4RjBFeXE3ZThlTGpiR2IwaDVRVHN4YUF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0OTY5ODIzCWZpbGU6SHVzeW5jXzAuMTQyLjBfeDY0LXNldHVwLmV4ZQpsc1FmLytPcW1MUWtqK1VLTUNYL3FwOEU0S3FpUVB5bGhRZDlraVFmVENQT2lxT2hxYnBsVEpzSk9FcmxMOWh6NDNBZ2g2RnA3RzNKUjZjSGxGeW9DZz09Cg==",
+      "url": "https://husync.github.io/download/releases/Husync_0.142.0_x64-setup.exe"
+    }
+  }
+}

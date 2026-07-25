@@ -1,0 +1,83 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      # Pages caps the deployment artifact at 1 GB; the full history of
+      # installers is 3+ GB. Only the last KEEP_VERSIONS releases are
+      # published — older installers stay available on the GitHub Releases
+      # of HuSync/husync.
+      KEEP_VERSIONS: 3
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prune old installers from the site
+        run: |
+          set -euo pipefail
+
+          # Files the updater feed points at — never delete these.
+          mapfile -t feed_files < <(jq -r '.platforms[].url' latest.json \
+            | sed 's|.*/releases/||' | sort -u)
+          feed_version=$(jq -r '.version' latest.json)
+
+          # Versions present in releases/, oldest first.
+          mapfile -t versions < <(ls releases/ \
+            | grep -oE '^Husync_[0-9]+\.[0-9]+\.[0-9]+_' \
+            | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | sort -uV)
+
+          keep=$(printf '%s\n' "${versions[@]}" | tail -n "$KEEP_VERSIONS")
+          keep=$(printf '%s\n%s\n' "$keep" "$feed_version" | sort -uV)
+
+          echo "Site size before: $(du -sh releases/ | cut -f1)"
+          echo "Keeping versions:"; echo "$keep"
+
+          deleted=0
+          for f in releases/*; do
+            name=$(basename "$f")
+            ver=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' <<<"$name" | head -1 || true)
+            # Unversioned files (Husync_universal.app.tar.gz, …) are kept.
+            [ -z "$ver" ] && continue
+            grep -qxF "$ver" <<<"$keep" && continue
+            printf '%s\n' "${feed_files[@]}" | grep -qxF "$name" && continue
+            rm -f "$f"
+            deleted=$((deleted+1))
+          done
+          echo "Deleted $deleted old files"
+          echo "Site size after: $(du -sh releases/ | cut -f1)"
+
+          # The feed must stay intact — fail the deploy rather than break it.
+          for name in "${feed_files[@]}"; do
+            if [ ! -f "releases/$name" ]; then
+              echo "::error::latest.json references missing file: $name"
+              exit 1
+            fi
+          done
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
