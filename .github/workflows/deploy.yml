@@ -16,7 +16,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     env:
-      # Pages caps the deployment artifact at 1 GB and the deploy step times
+      # Pages caps the deployment artifact at 1 GB and the deploy step times.
       # out after 10 minutes. Three versions of installers were enough to
       # blow past that, so only the current release is published here.
       KEEP_VERSIONS: 1
