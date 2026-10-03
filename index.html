@@ -216,9 +216,9 @@
       const mac = platforms["darwin-universal"] || platforms["darwin-aarch64"] || platforms["darwin-x86_64"];
       const win = platforms["windows-x86_64"];
 
-      const macDmg = `${RELEASE_BASE}/Husync_${v}_universal.dmg`;
-      const winExe = `${RELEASE_BASE}/Husync_${v}_x64-setup.exe`;
-      const winMsi = `${RELEASE_BASE}/Husync_${v}_x64_en-US.msi`;
+      const macDmg = `${RELEASE_BASE}/Twine_${v}_universal.dmg`;
+      const winExe = `${RELEASE_BASE}/Twine_${v}_x64-setup.exe`;
+      const winMsi = `${RELEASE_BASE}/Twine_${v}_x64_en-US.msi`;
 
       // Show download card
       const card = document.getElementById("download-card");
@@ -260,7 +260,7 @@
         html += `<div class="platform-card">
           <div class="os-header">${APPLE_ICON} macOS</div>
           <div class="files">
-            <a href="${macDmg}">${DL_ICON} Husync_${v}_universal.dmg</a>
+            <a href="${macDmg}">${DL_ICON} Twine_${v}_universal.dmg</a>
           </div>
         </div>`;
       }
@@ -268,8 +268,8 @@
         html += `<div class="platform-card">
           <div class="os-header">${WIN_ICON} Windows</div>
           <div class="files">
-            <a href="${winExe}">${DL_ICON} Husync_${v}_x64-setup.exe</a>
-            <a href="${winMsi}">${DL_ICON} Husync_${v}_x64_en-US.msi</a>
+            <a href="${winExe}">${DL_ICON} Twine_${v}_x64-setup.exe</a>
+            <a href="${winMsi}">${DL_ICON} Twine_${v}_x64_en-US.msi</a>
           </div>
         </div>`;
       }

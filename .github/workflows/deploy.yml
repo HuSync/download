@@ -31,7 +31,7 @@ jobs:
           feed_version=$(jq -r '.version' latest.json)
           # Versions present in releases/, oldest first.
           mapfile -t versions < <(ls releases/ \
-            | grep -oE '^Husync_[0-9]+\.[0-9]+\.[0-9]+_' \
+            | grep -oE '^Twine_[0-9]+\.[0-9]+\.[0-9]+_' \
             | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | sort -uV)
           keep=$(printf '%s\n' "${versions[@]}" | tail -n "$KEEP_VERSIONS")
           keep=$(printf '%s\n%s\n' "$keep" "$feed_version" | sort -uV)
@@ -41,7 +41,7 @@ jobs:
           for f in releases/*; do
             name=$(basename "$f")
             ver=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' <<<"$name" | head -1 || true)
-            # Unversioned files (Husync_universal.app.tar.gz, …) are kept.
+            # Unversioned files (Twine_universal.app.tar.gz, …) are kept.
             [ -z "$ver" ] && continue
             grep -qxF "$ver" <<<"$keep" && continue
             printf '%s\n' "${feed_files[@]}" | grep -qxF "$name" && continue
