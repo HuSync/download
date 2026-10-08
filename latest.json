@@ -1,31 +1,31 @@
 {
-  "version": "0.372.0",
+  "version": "0.373.0",
   "notes": "",
-  "pub_date": "2026-10-08T13:05:13.193Z",
+  "pub_date": "2026-10-08T16:59:46.241Z",
   "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MG5TN0QyMjg5eWpKRUcwWGRza1pNZHV3NmkrUy9NZ05GVTg3Q0l3ZWlmckVUREZ6cDRHQStLdXM2WDAzb001QzVvVm5PcndOd2pQemUwR1lmSS9zc3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDc3ODg1CWZpbGU6dHdpbmVfMC4zNzMuMF94NjQtc2V0dXAuZXhlCnB0ZGE0ZE5LYUdUaExsT1hXUnArR2hWM2dkVUI5dTVIT3g4NFUvcnZPVHFkR2V3Y1U3SVhSaFVHNFNnUWt4dGR2b2hHeC9vNnVUOXlRRm1JcmphY0NRPT0K",
+      "url": "https://husync.github.io/download/releases/twine_0.373.0_x64-setup.exe"
+    },
+    "windows-x86_64-nsis": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MG5TN0QyMjg5eWpKRUcwWGRza1pNZHV3NmkrUy9NZ05GVTg3Q0l3ZWlmckVUREZ6cDRHQStLdXM2WDAzb001QzVvVm5PcndOd2pQemUwR1lmSS9zc3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDc3ODg1CWZpbGU6dHdpbmVfMC4zNzMuMF94NjQtc2V0dXAuZXhlCnB0ZGE0ZE5LYUdUaExsT1hXUnArR2hWM2dkVUI5dTVIT3g4NFUvcnZPVHFkR2V3Y1U3SVhSaFVHNFNnUWt4dGR2b2hHeC9vNnVUOXlRRm1JcmphY0NRPT0K",
+      "url": "https://husync.github.io/download/releases/twine_0.373.0_x64-setup.exe"
+    },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MHJXZld1MDFxSDNlTjRvZ3NPaGZVZFNkMzFwbmFIcHltNzB6OW5ialEreFBpd0VCK0FsQ2lZQWs4RW83KzhqdnpWN3RRL2xBSHFFV0JqdCtnVjZROFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDY0MzA4CWZpbGU6dHdpbmUuYXBwLnRhci5negpkRCtXaDZRMFZ3bit6THplbzZnYloxRkptdG9OUVFsL0h3N255NGtOeGZBck9wcUloTWkySkQ2WTdTL0hTSk5lSHY4dVNxUXU3ZExGcjIydnV5VmhBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MHJTVksyYWVhTFQvbGs4aW10YklwVFY1VUFUU1dvdGFZMHE3bllYbVlBcTBydStpVDhxdzRaZ2ZYc0Y4bkRxV01aaGI4K2RxOTNSN2dRcnJUZTlzYWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDc4NzgwCWZpbGU6dHdpbmUuYXBwLnRhci5negpTQ2pKN2xydlFWc0ZwN1I0TmxnOHUwcGxuOTZoQ0Y1NUplVmtZTjh0cStURzZIQ3RsSnErT0MyQzd1MXRCd0xYR3dlS24zZHkvdnJsM3ozK3FjR3RDUT09Cg==",
       "url": "https://husync.github.io/download/releases/twine_universal.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MHJXZld1MDFxSDNlTjRvZ3NPaGZVZFNkMzFwbmFIcHltNzB6OW5ialEreFBpd0VCK0FsQ2lZQWs4RW83KzhqdnpWN3RRL2xBSHFFV0JqdCtnVjZROFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDY0MzA4CWZpbGU6dHdpbmUuYXBwLnRhci5negpkRCtXaDZRMFZ3bit6THplbzZnYloxRkptdG9OUVFsL0h3N255NGtOeGZBck9wcUloTWkySkQ2WTdTL0hTSk5lSHY4dVNxUXU3ZExGcjIydnV5VmhBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MHJTVksyYWVhTFQvbGs4aW10YklwVFY1VUFUU1dvdGFZMHE3bllYbVlBcTBydStpVDhxdzRaZ2ZYc0Y4bkRxV01aaGI4K2RxOTNSN2dRcnJUZTlzYWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDc4NzgwCWZpbGU6dHdpbmUuYXBwLnRhci5negpTQ2pKN2xydlFWc0ZwN1I0TmxnOHUwcGxuOTZoQ0Y1NUplVmtZTjh0cStURzZIQ3RsSnErT0MyQzd1MXRCd0xYR3dlS24zZHkvdnJsM3ozK3FjR3RDUT09Cg==",
       "url": "https://husync.github.io/download/releases/twine_universal.app.tar.gz"
     },
     "darwin-aarch64-app": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MHJXZld1MDFxSDNlTjRvZ3NPaGZVZFNkMzFwbmFIcHltNzB6OW5ialEreFBpd0VCK0FsQ2lZQWs4RW83KzhqdnpWN3RRL2xBSHFFV0JqdCtnVjZROFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDY0MzA4CWZpbGU6dHdpbmUuYXBwLnRhci5negpkRCtXaDZRMFZ3bit6THplbzZnYloxRkptdG9OUVFsL0h3N255NGtOeGZBck9wcUloTWkySkQ2WTdTL0hTSk5lSHY4dVNxUXU3ZExGcjIydnV5VmhBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MHJTVksyYWVhTFQvbGs4aW10YklwVFY1VUFUU1dvdGFZMHE3bllYbVlBcTBydStpVDhxdzRaZ2ZYc0Y4bkRxV01aaGI4K2RxOTNSN2dRcnJUZTlzYWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDc4NzgwCWZpbGU6dHdpbmUuYXBwLnRhci5negpTQ2pKN2xydlFWc0ZwN1I0TmxnOHUwcGxuOTZoQ0Y1NUplVmtZTjh0cStURzZIQ3RsSnErT0MyQzd1MXRCd0xYR3dlS24zZHkvdnJsM3ozK3FjR3RDUT09Cg==",
       "url": "https://husync.github.io/download/releases/twine_universal.app.tar.gz"
     },
     "darwin-x86_64-app": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MHJXZld1MDFxSDNlTjRvZ3NPaGZVZFNkMzFwbmFIcHltNzB6OW5ialEreFBpd0VCK0FsQ2lZQWs4RW83KzhqdnpWN3RRL2xBSHFFV0JqdCtnVjZROFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDY0MzA4CWZpbGU6dHdpbmUuYXBwLnRhci5negpkRCtXaDZRMFZ3bit6THplbzZnYloxRkptdG9OUVFsL0h3N255NGtOeGZBck9wcUloTWkySkQ2WTdTL0hTSk5lSHY4dVNxUXU3ZExGcjIydnV5VmhBQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MHJTVksyYWVhTFQvbGs4aW10YklwVFY1VUFUU1dvdGFZMHE3bllYbVlBcTBydStpVDhxdzRaZ2ZYc0Y4bkRxV01aaGI4K2RxOTNSN2dRcnJUZTlzYWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDc4NzgwCWZpbGU6dHdpbmUuYXBwLnRhci5negpTQ2pKN2xydlFWc0ZwN1I0TmxnOHUwcGxuOTZoQ0Y1NUplVmtZTjh0cStURzZIQ3RsSnErT0MyQzd1MXRCd0xYR3dlS24zZHkvdnJsM3ozK3FjR3RDUT09Cg==",
       "url": "https://husync.github.io/download/releases/twine_universal.app.tar.gz"
-    },
-    "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MG1qNjUzSHg4RllSdVM4dVZZRk83c0xDYys4U0NLbjJ1eDY1VkwzZWR6VTNpNlVrWmZ3WmcwOEtiUFd4TC9TY1hTUTZtSHBLOGhVckRZZmx3bEZVcHdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDY0NzEwCWZpbGU6dHdpbmVfMC4zNzIuMF94NjQtc2V0dXAuZXhlCkhzd01uY2I2RThTaXVYSU91NHRCTVlDNUMveDJnMXA1UWpOeG5pL0dSUTNzNmV5YW9ISVlFUGxMTG5XNlVyUWtVckt2clIxSmh6R0wrUjBoeDNYd0N3PT0K",
-      "url": "https://husync.github.io/download/releases/twine_0.372.0_x64-setup.exe"
-    },
-    "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRZDJiaXdCNGt0MG1qNjUzSHg4RllSdVM4dVZZRk83c0xDYys4U0NLbjJ1eDY1VkwzZWR6VTNpNlVrWmZ3WmcwOEtiUFd4TC9TY1hTUTZtSHBLOGhVckRZZmx3bEZVcHdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDY0NzEwCWZpbGU6dHdpbmVfMC4zNzIuMF94NjQtc2V0dXAuZXhlCkhzd01uY2I2RThTaXVYSU91NHRCTVlDNUMveDJnMXA1UWpOeG5pL0dSUTNzNmV5YW9ISVlFUGxMTG5XNlVyUWtVckt2clIxSmh6R0wrUjBoeDNYd0N3PT0K",
-      "url": "https://husync.github.io/download/releases/twine_0.372.0_x64-setup.exe"
     }
   }
 }
