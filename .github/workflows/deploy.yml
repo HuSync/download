@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment2.outputs.page_url || steps.deployment3.outputs.page_url }}
     env:
       # Pages caps the deployment artifact at 1 GB and the deploy step times.
       # out after 10 minutes. Three versions of installers were enough to
@@ -63,6 +63,28 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+      # Deploy, retried twice. The upload succeeds but deploy-pages sometimes
+      # finds "0 artifact(s)" right after it ("Fetching artifact metadata
+      # failed") — GitHub has not indexed the artifact yet. It hit 3 of 5
+      # releases (v0.477.0, v0.479.0, v0.482.0): each time the updater feed
+      # stayed on the old version until someone re-ran this job by hand, and
+      # a later attempt always passed. So wait, then try again.
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - name: Wait before retrying the deployment
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+      - name: Deploy to GitHub Pages (retry 1)
+        id: deployment2
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - name: Wait before the last attempt
+        if: steps.deployment.outcome == 'failure' && steps.deployment2.outcome == 'failure'
+        run: sleep 120
+      - name: Deploy to GitHub Pages (retry 2)
+        id: deployment3
+        if: steps.deployment.outcome == 'failure' && steps.deployment2.outcome == 'failure'
         uses: actions/deploy-pages@v4
